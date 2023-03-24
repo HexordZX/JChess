@@ -295,9 +295,10 @@ public abstract class Move {
 		}
 
 		@Override
-		public String toString() {
-			return "";
-		}
+        public String toString() {
+            return BoardUtils.getPositionAtCoordinate(this.movedPiece.getPiecePosition()) + "-" +
+                   BoardUtils.getPositionAtCoordinate(this.destinationCoordinate) + "=" + Piece.PieceType.QUEEN;
+        }
 	}
 
 	public static final class PawnJump extends Move {
