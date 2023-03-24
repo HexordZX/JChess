@@ -1,22 +1,22 @@
-#JChess
+# JChess
 
 A simple chess game made in Java with Swing interface.
 
-##Introduction
+## Introduction
 
 This is a project to test my skills using Java, improving my skills in inheritance, polymorphism, casting, collections, using unit tests with JUnit, and also using GUI with Swing.
 
-##Screenshot
+## Screenshot
 
 ![JChess-Image](Screenshot.png)
 
-##Features
+## Features
 
  - You can play against the AI by setting up the game in the Setup game section.
  - You can use highlight for your moves in the Preferences menu.
  - You can change the board position using the "Flip Board" option in the Preferences menu.
 
-##What I learned
+## What I learned
 
  - I learned how to structure my project in different folders and use conventions for Java projects.
  - I learned how to handle classes, immutability, their access modifiers, and their importance, as well as how to declare my variables as constants.
@@ -25,7 +25,7 @@ This is a project to test my skills using Java, improving my skills in inheritan
  - I learned how to make simple unit tests to test program functions.
  - I learned how to make an AI with a Minimax model with alpha-beta pruning.
  - I improved my skills in debugging and interpreting errors.
-##TODO
+## TODO
 
  - Improve AI using movement patterns based on book moves.
  - Implement PGN.
@@ -34,6 +34,6 @@ This is a project to test my skills using Java, improving my skills in inheritan
  - Fix GUI bugs.
  - Improve GUI interactions.
  - Improve the engine for StaleMate options.
-##Contact
+## Contact
  - [LinkedIn](https://www.linkedin.com/in/jonathan-mauricio-cifuentes-bar%C3%B3n-1094b6b7/)
 
