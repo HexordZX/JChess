@@ -10,23 +10,49 @@ import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
 import com.chess.engine.board.Move.MajorMove;
-import com.chess.engine.board.Move.AttackMove;
 import com.chess.engine.board.Move.MajorAttackMove;
-import com.chess.engine.pieces.Piece.PieceType;
 import com.google.common.collect.ImmutableList;
 
 public class King extends Piece {
 
 	private final static int[] CANDIDATE_MOVE_COORDINATES = { -9, -8, -7, -1, 1, 7, 8, 9 };
+	
+	private final boolean isCastled;
+	private final boolean kingSideCastleCapable;
+	private final boolean queenSideCastleCapable;
 
-	public King(final Alliance pieceAlliance, final int piecePosition) {
+	public King(final Alliance pieceAlliance, 
+				final int piecePosition,
+				final boolean kingSideCastleCapable,
+				final boolean queenSideCastleCapable) {
 		super(PieceType.KING,piecePosition, pieceAlliance, true);
+		this.isCastled = false;
+		this.kingSideCastleCapable = kingSideCastleCapable;
+		this.queenSideCastleCapable = queenSideCastleCapable;
 	}
 	
 	public King(final Alliance pieceAlliance, 
 				final int piecePosition,
-				final boolean isFirstMove) {
+				final boolean isFirstMove,
+				final boolean isCastled,
+				final boolean kingSideCastleCapable,
+				final boolean queenSideCastleCapable) {
 		super(PieceType.KING,piecePosition, pieceAlliance, isFirstMove);
+		this.isCastled = false;
+		this.kingSideCastleCapable = kingSideCastleCapable;
+		this.queenSideCastleCapable = queenSideCastleCapable;
+	}
+	
+	public boolean isCastled() {
+		return this.isCastled;
+	}
+	
+	public boolean isKingSideCastleCapable(){
+		return this.kingSideCastleCapable;
+	}
+	
+	public boolean isQueenSideCastleCapable(){
+		return this.queenSideCastleCapable;
 	}
 
 	@Override
@@ -56,7 +82,12 @@ public class King extends Piece {
 	
 	@Override
 	public King movePiece(final Move move) {
-		return new King(move.getMovedPiece().getPieceAlliance(), move.getDestinationCoordinate());
+		return new King(move.getMovedPiece().getPieceAlliance(), 
+						move.getDestinationCoordinate(), 
+						false, 
+						move.isCastlingMove(),
+						false,
+						false);
 	}
 	
 	public String toString() {

@@ -26,10 +26,10 @@ public abstract class Piece {
 	}
 	
 	private int computeHashCode() {
-		int result = pieceType.hashCode();
-		result = 31 * result + pieceAlliance.hashCode();
-		result = 31 * result + piecePosition;
-		result = 31 * result + (isFirstMove ? 1 : 0);
+		int result = this.pieceType.hashCode();
+		result = 31 * result + this.pieceAlliance.hashCode();
+		result = 31 * result + this.piecePosition;
+		result = 31 * result + (this.isFirstMove ? 1 : 0);
 		return result;
 	}
 
@@ -83,7 +83,6 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		},
@@ -95,7 +94,6 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		},
@@ -107,7 +105,6 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		},
@@ -119,7 +116,6 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return true;
 			}
 		},
@@ -131,7 +127,6 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		},
@@ -143,13 +138,12 @@ public abstract class Piece {
 
 			@Override
 			public boolean isRook() {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		};
 		
-		private String pieceName;
-		private int pieceValue;
+		private final int pieceValue;
+		private final String pieceName;
 		
 		PieceType(final int pieceValue,
 				final String pieceName){
@@ -165,6 +159,7 @@ public abstract class Piece {
 		public int getPieceValue() {
 			return this.pieceValue;
 		}
+		
 		public abstract boolean isKing();
 		public abstract boolean isRook();
 	}

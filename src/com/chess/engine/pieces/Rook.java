@@ -10,9 +10,7 @@ import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
 import com.chess.engine.board.Move.MajorMove;
-import com.chess.engine.board.Move.AttackMove;
 import com.chess.engine.board.Move.MajorAttackMove;
-import com.chess.engine.pieces.Piece.PieceType;
 import com.google.common.collect.ImmutableList;
 
 public class Rook extends Piece{
@@ -40,7 +38,7 @@ public class Rook extends Piece{
 			while(BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
 				
 				if(isFirstColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset) ||
-					isEighthColumnExclusion(candidateDestinationCoordinate, candidateDestinationCoordinate)){
+					isEighthColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset)){
 					break;
 				}
 				

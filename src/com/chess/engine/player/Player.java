@@ -69,10 +69,17 @@ public abstract class Player {
 		return this.isInCheck && !hasEscapeMoves();
 	}
 	
-	//TODO implement these methods below!!
 	public boolean isInStaleMate() {
 		return !this.isInCheck() && !hasEscapeMoves();
 	}	
+	
+	public boolean isKingSideCastleCapable() {
+		return this.playerKing.isKingSideCastleCapable();
+	}
+	
+	public boolean isQueenSideCastleCapable() {
+		return this.playerKing.isQueenSideCastleCapable();
+	}
 	
 	protected boolean hasEscapeMoves() {
 		for(final Move move: this.legalMoves) {

@@ -18,7 +18,7 @@ public class GameHistoryPanel extends JPanel{
 	
 	private final DataModel model;
 	private final JScrollPane scrollPane;
-	private static final Dimension HISTORY_PANEL_DIMENSION = new Dimension(100,40);
+	private static final Dimension HISTORY_PANEL_DIMENSION = new Dimension(120,40);
 	
 	public GameHistoryPanel() {
 		this.setLayout(new BorderLayout());
@@ -50,18 +50,14 @@ public class GameHistoryPanel extends JPanel{
 		if(moveHistory.getMoves().size() > 0) {
 			final Move lastMove = moveHistory.getMoves().get(moveHistory.size() -1);
 			final String moveText = lastMove.toString();
-			
 			if(lastMove.getMovedPiece().getPieceAlliance().isWhite()) {
 				this.model.setValueAt(moveText + calculateCheckAndCheckMateHash(board), currentRow, 0);
 			} else if (lastMove.getMovedPiece().getPieceAlliance().isBlack()) {
 				this.model.setValueAt(moveText + calculateCheckAndCheckMateHash(board), currentRow -1, 1);
 			}
 		}
-		
 		final JScrollBar vertical = scrollPane.getVerticalScrollBar();
 		vertical.setValue(vertical.getMaximum());
-			
-		
 	}
 	
 	private String calculateCheckAndCheckMateHash(Board board) {
@@ -76,11 +72,9 @@ public class GameHistoryPanel extends JPanel{
 	private static class DataModel extends DefaultTableModel{
 		private final List<Row> values;
 		private static final String[] NAMES = {"White", "Black"};
-		
 		DataModel(){
 			this.values = new ArrayList<>();
 		}
-		
 		public void clear() {
 			this.values.clear();
 			setRowCount(0);
