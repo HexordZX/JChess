@@ -34,6 +34,13 @@ This is a project to test my skills using Java, improving my skills in inheritan
  - Fix GUI bugs.
  - Improve GUI interactions.
  - Improve the engine for StaleMate options.
+ 
 ## Contact
  - [LinkedIn](https://www.linkedin.com/in/jonathan-mauricio-cifuentes-bar%C3%B3n-1094b6b7/)
 
+## Thanks
+This project is based on the tutorial for making a chess game from the Software Architecture & Design Youtube channel:
+[Software Architecture & Design](https://www.youtube.com/@amir650)
+
+The assets used for the chess pieces were obtained from the following website by John Pablok:
+[Pieces-assets](https://opengameart.org/content/chess-pieces-and-board-squares)
